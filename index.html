@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<h2> <a href="index.html">Home</a> </h2>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="toggle.html">Toggles</a></li>
+<li><a href="devices.html">devices</a></li>
+
+
+  First name:<br>
+  <input id="mainText"type="text" name="firstname" value="Daryl">
+  <br>
+  <br>
+  <input id="submitBtn" onclick="submitClick()" type="submit" value="Submit">
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAVZLoMgXPIWyr25-JwFDp9Q03cPIEiN2c",
+      authDomain: "roomcontrol-9553f.firebaseapp.com",
+      databaseURL: "https://roomcontrol-9553f.firebaseio.com",
+      projectId: "roomcontrol-9553f",
+      storageBucket: "roomcontrol-9553f.appspot.com",
+      messagingSenderId: "592390764049"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+<script src="index.js"></script>
+
+</body>
+</html>
