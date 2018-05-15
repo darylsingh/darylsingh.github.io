@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1><a href="Functions.html">TV Cinema</a></h1>
+
+<li> <a href="index.html">Home</a> </lo>
+<li><a href="toggle.html">Toggles</a></li>
+<li><a href="devices.html">devices</a></li>
+
+<h6 id="uname">
+<h6 id="umail">
+
+<button onclick="updateFirebase()"> Toggle </button>
+
+  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAVZLoMgXPIWyr25-JwFDp9Q03cPIEiN2c",
+      authDomain: "roomcontrol-9553f.firebaseapp.com",
+      databaseURL: "https://roomcontrol-9553f.firebaseio.com",
+      projectId: "roomcontrol-9553f",
+      storageBucket: "roomcontrol-9553f.appspot.com",
+      messagingSenderId: "592390764049"
+    };
+    firebase.initializeApp(config);
+
+    function updateFirebase(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 13
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+  </script>
+
+<script src="index.js"></script>
+
+</body>
+</html>
