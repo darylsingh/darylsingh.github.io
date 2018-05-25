@@ -25,6 +25,7 @@
       messagingSenderId: "592390764049"
     };
     firebase.initializeApp(config);
+    window.onload = updateFirebase();
 
     function updateFirebase(){
       const fb = firebase.database().ref()
