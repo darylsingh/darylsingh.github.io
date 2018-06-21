@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<style>
+.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 5px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 82px 250px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+.btn-group3 button {
+    background-color: #4CAF50; /* Green background */
+    border: 5px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 82px 250px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+
+
+.btn-group1 button {
+    background-color: #4CAF50; /* Green background */
+    border: 5px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 82px 250px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+
+.btn-group2 button {
+    background-color: #4CAF50; /* Green background */
+    border: 5px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 82px 250px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+
+.btn-group4 button {
+    background-color: #4CAF50; /* Green background */
+    border: 5px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 82px 250px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+</style>
+
+<body>
+
+
+<h6 id="uname">
+<h6 id="umail">
+<div class="btn-group">
+  <button onclick="updateF1()"> Fan Light</button>
+  <button onclick="updateF2()"> Fan</button>
+  <button onclick="updateF3()"> Closet</button>
+</div>
+
+<div class="btn-group1">
+  <button onclick="updateF4()"> CPU</button>
+  <button onclick="updateF5()"> Monitor</button>
+  <button onclick="updateF6()"> Desk Lamp</button>
+</div>
+
+<div class="btn-group2">
+  <button onclick="updateF7()"> Boat Lamp</button>
+  <button onclick="updateF8()"> TV</button>
+  <button onclick="updateF9()"> Wifi</button>
+</div>
+<div class="btn-group3">
+  <button onclick="updateF10()"> Room Control</button>
+  <button onclick="updateF11()"> Chromecast</button>
+  <button onclick="updateF12()"> Bed Time</button>
+</div>
+<div class="btn-group4">
+  <button onclick="updateF13()"> TV Cinema </button>
+  <button onclick="updateF14()"> Comp Cinema</button>
+  <button onclick="updateF15()"> Alarm</button>
+</div>
+  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAVZLoMgXPIWyr25-JwFDp9Q03cPIEiN2c",
+      authDomain: "roomcontrol-9553f.firebaseapp.com",
+      databaseURL: "https://roomcontrol-9553f.firebaseio.com",
+      projectId: "roomcontrol-9553f",
+      storageBucket: "roomcontrol-9553f.appspot.com",
+      messagingSenderId: "592390764049"
+    };
+    firebase.initializeApp(config);
+    //window.onload = updateFirebase();
+
+    ////////////////////////////////////////////////////////////////////////////////////////
+    function updateF1(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 1
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF2(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 2
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF3(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 3
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF4(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 4
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF5(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 5
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF6(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 6
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF7(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 7
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF8(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 8
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF9(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 9
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF10(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 10
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF11(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 11
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF12(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 12
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF13(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 13
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF14(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 14
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+    function updateF15(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 15
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+
+  </script>
+
+<script src="index.js"></script>
+
+</body>
+</html>

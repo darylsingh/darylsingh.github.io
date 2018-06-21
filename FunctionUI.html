@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<style>
+.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 5px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 90px 250px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+</style>
+<body>
+
+
+  <div class="btn-group">
+    <button onclick="updateFirebaseF1()">Fan Light</button>
+    <button>Fan</button>
+    <button>Closet</button>
+  </div>
+
+  <div class="btn-group">
+    <button>CPU</button>
+    <button>Monitor</button>
+    <button>Desk Lamp</button>
+  </div>
+
+  <div class="btn-group">
+    <button>Boat Lamp</button>
+    <button>TV</button>
+    <button>Wifi</button>
+  </div>
+
+  <div class="btn-group">
+    <button>Room Control</button>
+    <button>Chromecast</button>
+    <button>Bed Time</button>
+  </div>
+
+  <div class="btn-group">
+    <button>TV Cinema</button>
+    <button>Computer Cinema</button>
+    <button>Alarm</button>
+  </div>
+
+<h1><a href="Functions.html">Functions</a></h1>
+
+<li> <a href="index.html">Home</a> </lo>
+<li><a href="toggle.html">Toggles</a></li>
+<li><a href="devices.html">devices</a></li>
+
+<h2><a href="F1.html">Fan Light</a></h2>
+<h2><a href="F2.html">Fan</a></h2>
+<h2><a href="F3.html">Closet</a></h2>
+<h2><a href="F4.html">CPU</a></h2>
+<h2><a href="F5.html">Monitor</a></h2>
+<h2><a href="F6.html">Desk Lamp</a></h2>
+<h2><a href="F7.html">Boat Lamp</a></h2>
+<h2><a href="F8.html">TV</a></h2>
+<h2><a href="F9.html">Wifi</a></h2>
+<h2><a href="F10.html">Room Control</a></h2>
+<h2><a href="F11.html">Chromecast</a></h2>
+<h2><a href="F12.html">Bed Time</a></h2>
+<h2><a href="F13.html">TV Cinema</a></h2>
+<h2><a href="F14.html">Computer Cinema</a></h2>
+<h2><a href="F15.html">Leaving</a></h2>
+
+
+  First name:<br>
+  <input id="mainText"type="text" name="firstname" value="Daryl">
+  <br>
+  <br>
+  <input id="submitBtn" onclick="submitClick()" type="submit" value="Submit">
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAVZLoMgXPIWyr25-JwFDp9Q03cPIEiN2c",
+      authDomain: "roomcontrol-9553f.firebaseapp.com",
+      databaseURL: "https://roomcontrol-9553f.firebaseio.com",
+      projectId: "roomcontrol-9553f",
+      storageBucket: "roomcontrol-9553f.appspot.com",
+      messagingSenderId: "592390764049"
+    };
+    firebase.initializeApp(config);
+
+    function updateFirebaseF1(){
+      const fb = firebase.database().ref()
+      //get feild values
+      req = 1
+      user_name = document.getElementById('uname').value
+      user_email= document.getElementById('umail').value
+      data = {req}
+      //update firebaseio
+      fb.child('request/').update(data);
+    }
+  </script>
+
+<script src="index.js"></script>
+
+</body>
+</html>
