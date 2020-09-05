@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Accountability Tracker</title>
+<style>
+table, th, td {
+  border: 10px solid #E9C354;
+}
+
+th, td {
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<script>
+            var timeElapsed = 0;
+            var timerID = -1;
+            function tick() {
+				
+                timeElapsed=(timeElapsed +1);
+				
+                document.getElementById("time").innerHTML = timeElapsed;
+				
+            }
+
+            function start() {
+                if(timerID == -1){
+                    timerID = setInterval(tick, 36000);
+                }
+            }
+
+            function stop() {
+                if(timerID != -1){
+                    clearInterval(timerID)
+                    timerID = -1
+                }
+            }
+
+            function reset() {
+                stop();
+                timeElapsed =0;
+                tick()
+            }
+        </script>	
+
+<table>
+	<col width="150"> 
+	<col width="150"> 
+  <tr>
+	<th>Vehicle</th>
+	<td><input type="1tag" size = "3"></td>
+	  <td >------------NOTES----------</td>
+	</tr>
+	
+	<tr>
+	<th>Total Time</th>
+	<td><input type="1total" size = "3"></td> 
+		<td rowspan="5" colspan="3"><input type="note" width: 10px ></td>
+	</tr>
+	
+	<tr>
+	<th>Running T.U.</th>
+	<td><div><span id="time">000</span></div></td>
+	</tr>
+	
+	<tr> 
+	<th>Start</th>
+	<td><input type="button" id="startTimer" value="Start Timer" onclick="start();"><br/></td>
+	</tr>
+	
+	<tr>
+	<th>Stop</th>
+	<td><input type="button" id="stopTimer" value="Stop Timer"  onclick="stop();"><br/></td>
+	</tr>
+	
+	<tr>
+	<th>Reset</th>
+	<td><input type="button" id="resetTimer" value="Reset Timer"  onclick="reset();"><br/></td>
+	</tr>
+    
+ 
+	
+</table>
+
+</body>
+</html>
